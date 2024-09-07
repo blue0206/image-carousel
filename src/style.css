@@ -27,3 +27,21 @@ p, h1, h2, h3, h4, h5, h6 {
 #root, #__next {
     isolation: isolate;
 }
+
+/* Styling */
+body {
+    display: grid;
+    grid-template: minmax(auto, 108px) 1fr / 1fr;
+    grid-template-areas: 'header' 'main';
+    gap: 35px;
+
+    min-height: 100dvh;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
