@@ -78,3 +78,36 @@ header {
     height: 100%;
     width: calc(100% / 5);
 }
+
+/* Slider buttons */
+.slider-btn {
+    position: absolute;
+    top: 48%;
+    z-index: 4;
+
+    background-repeat: no-repeat;
+    background-size: 1.5em;
+    background-position: center;
+
+    height: 2.5em;
+    aspect-ratio: 1 / 1;
+    background-color: hsl(0, 0%, 0%);
+    border-radius: 100vh;
+    padding: 16px;
+}
+
+.slider-btn:hover {
+    filter: invert(100%);
+}
+
+.carousel-next {
+    background-image: url('./assets/icons/arrow-forward.svg');
+
+    right: 1%;
+}
+
+.carousel-previous {
+    background-image: url('./assets/icons/arrow-back.svg');
+    
+    left: 1%;
+}
