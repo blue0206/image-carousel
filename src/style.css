@@ -71,6 +71,7 @@ header {
     width: calc(100% * 5);
 
     position: absolute;
+    left: 0%;
 }
 
 .frame-image {
