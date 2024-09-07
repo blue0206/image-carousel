@@ -45,3 +45,24 @@ header {
 main {
     grid-area: main;
 }
+
+/* Image Carousel */
+.frame {
+    width: 100%;
+    aspect-ratio: 1 / 0.35;
+
+    position: relative;
+}
+
+.images {
+    display: flex;
+    height: 100%;
+    width: calc(100% * 5);
+
+    position: absolute;
+}
+
+.frame-image {
+    height: 100%;
+    width: calc(100% / 5);
+}
