@@ -27,3 +27,16 @@ const CarouselSlider = function(){
 
     return { next, previous };
 }();
+
+const SliderBtn = function() {
+    const nextButton = document.querySelector('.carousel-next');
+    const previousButton = document.querySelector('.carousel-previous');
+    
+    nextButton.addEventListener('click', () => {
+        CarouselSlider.next();
+    });
+    
+    previousButton.addEventListener('click', () => {
+        CarouselSlider.previous();
+    });
+}();
