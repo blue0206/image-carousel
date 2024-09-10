@@ -55,6 +55,7 @@ header {
     display: grid;
     place-content: center;
     font-size: 3.2rem;
+    font-weight: 800;
 }
 
 /* Image Carousel */
@@ -62,16 +63,18 @@ header {
     width: 100%;
     aspect-ratio: 1 / 0.35;
 
+    background-color: hsla(0, 0%, 0%, 0.863);
+
     position: relative;
 }
 
 .images {
     display: flex;
-    height: 100%;
+    height: 85%;
     width: calc(100% * 5);
 
     position: absolute;
-    left: 0%;
+    left: 0;
 }
 
 .frame-image {
@@ -82,14 +85,15 @@ header {
 /* Slider buttons */
 .slider-btn {
     position: absolute;
-    top: 48%;
-    z-index: 4;
+    top: 40%;
+    bottom: 40%;
+    z-index: 1;
 
     background-repeat: no-repeat;
-    background-size: 1.5em;
+    background-size: 2em;
     background-position: center;
 
-    height: 2.5em;
+    height: 4em;
     aspect-ratio: 1 / 1;
     background-color: hsl(0, 0%, 0%);
     border-radius: 100vh;
@@ -110,4 +114,28 @@ header {
     background-image: url('./assets/icons/arrow-back.svg');
     
     left: 1%;
+}
+
+/* Navigation Dots */
+.navigation-dots {
+    position: absolute;
+    bottom: 4%;
+    left: 40%;
+    right: 40%;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dot {
+    height: 2em;
+    aspect-ratio: 1 / 1;
+    border-radius: 100vh;
+    background-color: hsla(0, 0%, 37%, 0.712);
+}
+
+.dot.visible {
+    background-color: hsl(0, 0%, 100%);
 }
