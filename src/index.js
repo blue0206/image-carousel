@@ -35,6 +35,38 @@ const CarouselSlider = function(){
         }
     };
 
+    const navDotsContainer = document.querySelector('.navigation-dots');
+    navDotsContainer.addEventListener('click', (e) => {
+        switch (e.target.classList[1])
+        {
+            case 'img-1':
+                currentImageIndex = 0;
+                imageReel.style.left = `-${fetchImageWidth() * currentImageIndex}px`;
+                highlightNavDot(currentImageIndex);
+                break;
+            case 'img-2':
+                currentImageIndex = 1;
+                imageReel.style.left = `-${fetchImageWidth() * currentImageIndex}px`;
+                highlightNavDot(currentImageIndex);
+                break;
+            case 'img-3':
+                currentImageIndex = 2;
+                imageReel.style.left = `-${fetchImageWidth() * currentImageIndex}px`;
+                highlightNavDot(currentImageIndex);
+                break;
+            case 'img-4':
+                currentImageIndex = 3;
+                imageReel.style.left = `-${fetchImageWidth() * currentImageIndex}px`;
+                highlightNavDot(currentImageIndex);
+                break;
+            case 'img-5':
+                currentImageIndex = 4;
+                imageReel.style.left = `-${fetchImageWidth() * currentImageIndex}px`;
+                highlightNavDot(currentImageIndex);
+                break;
+        }
+    });
+
     const highlightNavDot = (index) => {
         for (let i=0; i<5; i++)
         {
