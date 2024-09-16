@@ -98,3 +98,5 @@ const SliderBtn = function() {
         CarouselSlider.previous();
     });
 }();
+
+setInterval(CarouselSlider.next, 2000);
