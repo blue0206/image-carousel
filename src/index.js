@@ -2,6 +2,8 @@ import './style.css';
 
 const CarouselSlider = function(){
     const imageReel = document.querySelector('.images');
+    const navDots = document.querySelectorAll(".dot");
+
     let currentImageIndex = 0;
     let lastImageIndex = 4;
 
@@ -30,6 +32,20 @@ const CarouselSlider = function(){
         {
             imageReel.style.left = `-${fetchImageWidth() * --currentImageIndex}px`;
             highlightNavDot(currentImageIndex);
+        }
+    };
+
+    const highlightNavDot = (index) => {
+        for (let i=0; i<5; i++)
+        {
+            if (i == index)
+            {
+                navDots[i].classList.add('visible');
+            }
+            else
+            {
+                navDots[i].classList.remove('visible');
+            }
         }
     };
 
