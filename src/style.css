@@ -71,7 +71,7 @@ header {
 
 .images {
     display: flex;
-    height: 85%;
+    height: 88%;
     width: calc(100% * 5);
 
     position: absolute;
