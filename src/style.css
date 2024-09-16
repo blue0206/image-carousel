@@ -62,6 +62,7 @@ header {
 .frame {
     width: 100%;
     aspect-ratio: 1 / 0.35;
+    overflow: hidden;
 
     background-color: hsla(0, 0%, 0%, 0.863);
 
