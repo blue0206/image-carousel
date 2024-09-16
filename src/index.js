@@ -2,28 +2,38 @@ import './style.css';
 
 const CarouselSlider = function(){
     const imageReel = document.querySelector('.images');
+    let currentImageIndex = 0;
+    let lastImageIndex = 4;
 
     const next = () => {
-        let imageWidth = imageReel.querySelector("img").width;
-        let currentPosition = parseInt(window.getComputedStyle(imageReel).getPropertyValue('left'));
-        let newPosition = 0;
-        if (currentPosition > (imageWidth * -4))
+        if (currentImageIndex == lastImageIndex)
         {
-            newPosition = currentPosition - imageWidth;
+            currentImageIndex = 0;
+            imageReel.style.left = `-${fetchImageWidth() * currentImageIndex}px`;
+            highlightNavDot(currentImageIndex);
         }
-        imageReel.style.left = `${newPosition}px`;
+        else
+        {
+            imageReel.style.left = `-${fetchImageWidth() * (++currentImageIndex)}px`;
+            highlightNavDot(currentImageIndex);
+        }
     };
 
     const previous = () => {
-        let imageWidth = imageReel.querySelector("img").width;
-        let currentPosition = parseInt(window.getComputedStyle(imageReel).getPropertyValue('left'));
-        let newPosition = -4 * imageWidth;
-        if (currentPosition != 0)
+        if (currentImageIndex == 0)
         {
-            newPosition = currentPosition + imageWidth;
+            imageReel.style.left = `-${fetchImageWidth() * lastImageIndex}px`;
+            currentImageIndex = lastImageIndex;
+            highlightNavDot(currentImageIndex);
         }
-        imageReel.style.left = `${newPosition}px`;
+        else
+        {
+            imageReel.style.left = `-${fetchImageWidth() * --currentImageIndex}px`;
+            highlightNavDot(currentImageIndex);
+        }
     };
+
+    const fetchImageWidth = () => imageReel.querySelector('img').width;
 
     return { next, previous };
 }();
